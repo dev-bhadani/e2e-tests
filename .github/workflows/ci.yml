@@ -24,5 +24,13 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install
 
+      - name: Start Next.js server
+        run: npm run dev &
+        env:
+          CI: true
+
+      - name: Wait for server to be ready
+        run: npx wait-on http://localhost:3000
+
       - name: Run end-to-end tests
         run: npm run test:e2e
