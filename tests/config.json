@@ -1,0 +1,11 @@
+{
+  "app_url": "http://localhost:3000",
+  "login": {
+    "email": "test@maddox123.ai",
+    "password": "supersecure"
+  },
+  "invalid": {
+    "email": "nonexistent@maddox123.ai",
+    "password": "wrongpassword"
+  }
+}
