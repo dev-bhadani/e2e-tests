@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:report": "npx playwright test --reporter=line,allure-playwright",
+    "allure:generate": "allure generate ./allure-results -o ./allure-report",
+    "allure:view": "allure open ./allure-report"
   },
   "dependencies": {
     "next": "15.2.1",
@@ -15,6 +18,8 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.51.0"
+    "@playwright/test": "^1.51.0",
+    "allure-commandline": "^2.33.0",
+    "allure-playwright": "^3.2.0"
   }
 }
