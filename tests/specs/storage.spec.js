@@ -3,7 +3,7 @@ import config from "../config.json";
 import {login, logout} from "../helpers/loginHelper";
 import {getLocalStorageToken} from "../helpers/storageHelper";
 
-test.describe.parallel("LocalStorage Functionality", () => {
+test.describe("LocalStorage Functionality", () => {
     test.beforeEach(async ({page}) => {
         await page.goto(`${config.app_url}/login`);
         await page.evaluate(() => localStorage.clear());

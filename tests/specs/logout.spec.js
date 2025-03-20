@@ -2,7 +2,7 @@ import {expect, test} from "@playwright/test";
 import {login, logout} from "../helpers/loginHelper";
 import config from "../config.json";
 
-test.describe.parallel("Logout Functionality", () => {
+test.describe("Logout Functionality", () => {
     test.beforeEach(async ({page}) => {
         await login(page);
     });

@@ -2,7 +2,7 @@ import {expect, test} from "@playwright/test";
 import config from "../config.json";
 import {login} from "../helpers/loginHelper";
 
-test.describe.parallel("Login Functionality", () => {
+test.describe("Login Functionality", () => {
     test.beforeEach(async ({page}) => {
         await page.goto(`${config.app_url}/login`);
     });

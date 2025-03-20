@@ -1,5 +1,5 @@
-import config from "../config.json";
 import {expect} from "@playwright/test";
+import config from '../config.json';
 
 export async function login(page) {
     await page.goto(`${config.app_url}/login`);
