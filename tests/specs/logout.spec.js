@@ -21,7 +21,7 @@ test.describe("Logout Functionality", () => {
     test("Logout without being logged in", async ({page}) => {
         await page.evaluate(() => localStorage.removeItem("token"));
         await page.goto(config.app_url);
-        await expect(page).toHaveURL(`${config.app_url}/login`, {timeout: 8000});
+        await expect(page).toHaveURL(`${config.app_url}/login`, {timeout: 3000});
         await expect(page.locator('button:has-text("Logout")')).not.toBeAttached();
     });
 });

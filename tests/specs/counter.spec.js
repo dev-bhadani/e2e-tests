@@ -11,7 +11,7 @@ test.describe("Counter Functionality", () => {
         const incrementButton = page.locator('button.counterButton:has-text("+")');
         const decrementButton = page.locator('button.counterButton:has-text("-")');
         const resetButton = page.locator('button.counterButton:has-text("Reset")');
-        await page.waitForSelector("p", {timeout: 3000});
+        await page.waitForSelector("p", {timeout: 1000});
         await expect.poll(async () => await counter.textContent()).toBe("0");
         await incrementButton.click();
         await expect.poll(async () => await counter.textContent()).toBe("1");
@@ -27,7 +27,7 @@ test.describe("Counter Functionality", () => {
         const counter = page.getByRole("paragraph");
         const incrementButton = page.locator('button.counterButton:has-text("+")');
         const decrementButton = page.locator('button.counterButton:has-text("-")');
-        await page.waitForSelector("p", {timeout: 8000});
+        await page.waitForSelector("p", {timeout: 1000});
         for (let i = 0; i < 50; i++) {
             await incrementButton.click();
         }
