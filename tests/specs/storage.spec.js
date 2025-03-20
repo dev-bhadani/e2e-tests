@@ -2,16 +2,11 @@ import {expect, test} from "@playwright/test";
 import config from "../config.json";
 import {login, logout} from "../helpers/loginHelper";
 import {getLocalStorageToken} from "../helpers/storageHelper";
-import {takeScreenshot} from "../helpers/screenshotHelper";
 
 test.describe("LocalStorage Functionality", () => {
     test.beforeEach(async ({page}) => {
         await page.goto(`${config.app_url}/login`);
         await page.evaluate(() => localStorage.clear());
-    });
-
-    test.afterEach(async ({page}, testInfo) => {
-        await takeScreenshot(page, `login-${testInfo.title}`);
     });
 
     test("Token is stored in localStorage after successful login", async ({page}) => {

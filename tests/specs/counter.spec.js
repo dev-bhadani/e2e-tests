@@ -1,14 +1,9 @@
 import {expect, test} from "@playwright/test";
 import {login} from "../helpers/loginHelper";
-import {takeScreenshot} from "../helpers/screenshotHelper";
 
 test.describe("Counter Functionality", () => {
     test.beforeEach(async ({page}) => {
         await login(page);
-    });
-
-    test.afterEach(async ({page}, testInfo) => {
-        await takeScreenshot(page, `login-${testInfo.title}`);
     });
 
     test("Increment, decrement, and reset counter", async ({page}) => {

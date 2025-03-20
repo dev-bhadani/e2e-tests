@@ -1,15 +1,10 @@
 import {expect, test} from "@playwright/test";
 import config from "../config.json";
 import {login} from "../helpers/loginHelper";
-import {takeScreenshot} from "../helpers/screenshotHelper";
 
 test.describe("Login Functionality", () => {
     test.beforeEach(async ({page}) => {
         await page.goto(`${config.app_url}/login`);
-    });
-
-    test.afterEach(async ({page}, testInfo) => {
-        await takeScreenshot(page, `login-${testInfo.title}`);
     });
 
     test("Successful login", async ({page}) => {
