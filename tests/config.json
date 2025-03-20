@@ -7,5 +7,6 @@
   "invalid": {
     "email": "nonexistent@maddox123.ai",
     "password": "wrongpassword"
-  }
+  },
+  "token": "dummy_token_12345"
 }

@@ -11,7 +11,7 @@ test.describe("LocalStorage Functionality", () => {
 
     test("Token is stored in localStorage after successful login", async ({page}) => {
         await login(page);
-        await expect.poll(() => getLocalStorageToken(page)).toBe("dummy_token_12345");
+        await expect.poll(() => getLocalStorageToken(page)).toBe(config.token);
     });
 
     test("Token is removed from localStorage after logout", async ({page}) => {
@@ -27,7 +27,7 @@ test.describe("LocalStorage Functionality", () => {
     });
 
     test("Stay on home page if token is present", async ({page}) => {
-        await page.evaluate(() => localStorage.setItem("token", "dummy_token_12345"));
+        await page.evaluate((token) => localStorage.setItem("token", token), config.token);
         await page.goto(config.app_url);
         await expect(page).toHaveURL(config.app_url);
     });
