@@ -21,6 +21,7 @@ test.describe("LocalStorage Functionality", () => {
     });
 
     test("Redirect to login if token is not present", async ({page}) => {
+        await page.evaluate(() => localStorage.clear());
         await page.goto(config.app_url);
         await expect(page).toHaveURL(`${config.app_url}/login`);
     });
