@@ -1,1 +1,1 @@
-# Sample Web Application for End-to-End Testing
+# End-to-End Testing
