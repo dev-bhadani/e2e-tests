@@ -1,21 +1,21 @@
-# End-to-End Testing
+# End-to-End Testing 🚀
 
-## Introduction
+## Introduction 📋
 
 This is a simple web application with the following features:
 
-- A login page where users can enter their username and password to login.
+- A login page where users can enter their username and password to login. 🔐
 - A home page where users can see a counter and perform the following actions:
-    - Increment the counter
-    - Decrement the counter
-    - Reset the counter
-    - Logout
+    - Increment the counter ➕
+    - Decrement the counter ➖
+    - Reset the counter 🔄
+    - Logout 🚪
 
-## End-to-End Tests
+## End-to-End Tests 🧪
 
 End-to-end tests for the application are written using **Playwright**. The tests cover the following scenarios:
 
-### Test 1: Login Flow
+### Test 1: Login Flow 🔑
 
 - Visit the login page
 - Enter the username and password
@@ -23,29 +23,29 @@ End-to-end tests for the application are written using **Playwright**. The tests
 - Verify that the user is redirected to the home page if the login is successful
 - Verify that the user sees an error message if the login is unsuccessful
 
-### Test 2: Counter Functionality
+### Test 2: Counter Functionality 🔢
 
 - Visit the home page
 - Verify that every click on the increment button increments the counter value by 1
 - Verify that every click on the decrement button decrements the counter value by 1
 - Verify that the reset button resets the counter value to 0
 
-### Test 3: Logout Functionality
+### Test 3: Logout Functionality 🚪
 
 - Visit the home page
 - Logout the user
 - Verify that the user is redirected to the login page
 - Verify that the user cannot access the home page and is redirected to the login page if not logged in
 
-## Setup
+## Setup 🛠️
 
-### Prerequisites
+### Prerequisites 📦
 
 - Node.js
 - npm
 - Playwright
 
-### Installation
+### Installation 💻
 
 1. Clone the repository:
     ```sh
@@ -58,7 +58,7 @@ End-to-end tests for the application are written using **Playwright**. The tests
     npm install
     ```
 
-### Running the Application
+### Running the Application ▶️
 
 To start the application in development mode:
 ```sh
@@ -66,7 +66,7 @@ To start the application in development mode:
 ```
 This will start the application on `http://localhost:3000`.
 
-### Running the Tests
+### Running the Tests 🧪
 To run the end-to-end tests, use the following command:
 ```sh
   npm playwright test
