@@ -10,7 +10,7 @@ export default function Login() {
     const router = useRouter()
 
     const DUMMY_CREDENTIALS = {
-        email: "test@maddox123.ai",
+        email: "test@test.com",
         password: "supersecure",
     };
 
@@ -59,7 +59,12 @@ export default function Login() {
                     />
                 </div>
                 <button type="submit">Login</button>
-                {message && <p style={{margin: "16px 0", padding: "16px",color: "rgb(95, 36, 47)", backgroundColor: "rgb(253, 238, 241)"}}>{message}</p>}
+                {message && <p style={{
+                    margin: "16px 0",
+                    padding: "16px",
+                    color: "rgb(95, 36, 47)",
+                    backgroundColor: "rgb(253, 238, 241)"
+                }}>{message}</p>}
             </form>
         </div>
     );
