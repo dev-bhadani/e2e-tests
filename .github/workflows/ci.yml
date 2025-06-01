@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -34,8 +35,16 @@ jobs:
         run: npx wait-on http://localhost:3000
 
       - name: Run end-to-end tests
-        run: npm run test:e2e
+        run: npx playwright test --config=playwright.config.ts
         continue-on-error: true
+
+      - name: List generated artifacts
+        run: |
+          echo "Checking test-results/"
+          ls -R test-results || echo "No test-results found"
+
+          echo "Checking playwright-report/"
+          ls -R playwright-report || echo "No playwright-report found"
 
       - name: Upload Playwright test artifacts
         if: always()
@@ -48,4 +57,4 @@ jobs:
             **/screenshots/
             **/videos/
             **/traces/
-
+          if-no-files-found: warn
