@@ -38,8 +38,8 @@ jobs:
         continue-on-error: true
 
       - name: Upload Playwright test artifacts
-        if: always() # Ensure this runs even if tests fail
-        uses: actions/upload-artifact@v3
+        if: always()
+        uses: actions/upload-artifact@v2
         with:
           name: playwright-artifacts
           path: |
@@ -48,3 +48,4 @@ jobs:
             **/screenshots/
             **/videos/
             **/traces/
+
