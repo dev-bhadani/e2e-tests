@@ -2,10 +2,13 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   use: {
-    trace: 'on-first-retry',
-    video: 'retain-on-failure',
-    screenshot: 'only-on-failure',
+    trace: 'on',
+    video: 'on',
+    screenshot: 'on',
   },
-  reporter: [['html', { outputFolder: 'playwright-report' }]],
+  reporter: [
+    ['html', { outputFolder: 'playwright-report' }],
+    ['junit', { outputFile: 'test-results/results.xml' }]
+  ],
   outputDir: 'test-results/',
 });
