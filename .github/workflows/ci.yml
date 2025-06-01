@@ -46,7 +46,7 @@ jobs:
           echo "Checking playwright-report/"
           ls -R playwright-report || echo "No playwright-report found"
 
-      - name: Upload Playwright test artifacts
+      - name: Upload test results as GitHub Actions artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -58,3 +58,9 @@ jobs:
             **/videos/
             **/traces/
           if-no-files-found: warn
+
+      - name: Upload JUnit XML test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit
