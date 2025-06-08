@@ -38,32 +38,22 @@ jobs:
         run: npx playwright test --config=playwright.config.ts
         continue-on-error: true
 
-      - name: List generated artifacts
+      - name: Generate Allure report
         run: |
-          echo "Checking test-results/"
-          ls -R test-results || echo "No test-results found"
+          npx allure generate --clean
+        continue-on-error: true
 
-          echo "Checking playwright-report/"
-          ls -R playwright-report || echo "No playwright-report found"
-
-      - name: Upload test results as GitHub Actions artifact
+      - name: Upload Allure report as artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-artifacts
-          path: |
-            test-results/
-            playwright-report/
-            **/screenshots/
-            **/videos/
-            **/traces/
+          name: allure-report
+          path: allure-report
           if-no-files-found: warn
 
-      - name: Upload JUnit XML test results
-        if: always()
-        uses: actions/upload-artifact@v4
+      - name: Deploy Allure report to GitHub Pages
+        if: github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: junit
-          path: test-results/results.xml  
-          if-no-files-found: warn
-
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
