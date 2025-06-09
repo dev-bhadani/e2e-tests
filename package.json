@@ -9,10 +9,10 @@
     "lint": "next lint",
     "test:e2e": "playwright test",
     "login-auth": "playwright test tests/setup/Authenticate.setup.js",
+    "test-login-tests": "playwright test tests/specs/login.spec.js",
     "test-counter-tests": "playwright test tests/specs/counter.spec.js",
-    "test-logout-tests": "playwright test tests/specs/logout.spec.js",
     "test-storage-tests": "playwright test tests/specs/storage.spec.js",
-    "test-login-tests": "playwright test tests/specs/login.spec.js"
+    "test-logout-tests": "playwright test tests/specs/logout.spec.js"
   },
   "dependencies": {
     "next": "15.2.4",

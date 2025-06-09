@@ -6,6 +6,7 @@ export default defineConfig({
     video: 'on',
     screenshot: 'on',
   },
+  workers: 1,
   testMatch: ['**/*.setup.js', '**/*.spec.js'],
   reporter: [
     ['html', { outputFolder: 'playwright-report' }],

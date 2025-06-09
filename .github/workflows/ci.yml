@@ -82,9 +82,9 @@ jobs:
       - name: Run all Playwright tests
         run: |
           npm run test-counter-tests
-          npm run test-logout-tests
-          npm run test-storage-tests
           npm run test-login-tests
+          npm run test-storage-tests
+          npm run test-logout-tests
         continue-on-error: true
 
       - name: Upload Allure results as artifact
