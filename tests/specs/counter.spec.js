@@ -1,12 +1,15 @@
 import {expect, test} from "@playwright/test";
-import {login} from "../helpers/loginHelper";
+import config from "../config.json";
+
+test.use({storageState: 'tests/loginAuth.json'});
 
 test.describe("Counter Functionality", () => {
     test.beforeEach(async ({page}) => {
-        await login(page);
+        await page.goto(`${config.app_url}`);
     });
 
     test("Increment, decrement, and reset counter", async ({page}) => {
+
         const counter = page.getByRole("paragraph");
         const incrementButton = page.locator('button.counterButton:has-text("+")');
         const decrementButton = page.locator('button.counterButton:has-text("-")');

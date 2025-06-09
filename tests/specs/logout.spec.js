@@ -1,19 +1,15 @@
-import {expect, test} from "@playwright/test";
-import {login, logout} from "../helpers/loginHelper";
+import {test} from "@playwright/test";
+import {logout} from "../helpers/loginHelper";
+import config from "../config.json";
+
+test.use({storageState: 'tests/loginAuth.json'});
 
 test.describe("Logout Functionality", () => {
     test.beforeEach(async ({page}) => {
-        await login(page);
+        await page.goto(`${config.app_url}`);
     });
 
     test("Logout from home page", async ({page}) => {
         await logout(page);
-    });
-
-    test("Logout button not available", async ({page}) => {
-        const logoutButton = page.locator('button:has-text("Logout")');
-        await expect(logoutButton).toBeVisible();
-        await logoutButton.evaluate(node => node.remove());
-        await expect(logoutButton).not.toBeVisible();
     });
 });

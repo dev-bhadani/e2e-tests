@@ -71,3 +71,8 @@ To run the end-to-end tests, use the following command:
 ```sh
   npm playwright test
 ```
+
+## CI/CD Pipeline and Test Reports 📈
+
+- The CI pipeline can be triggered at: [GitHub Actions](https://github.com/dev-bhadani/e2e-tests/actions)
+- The latest deployed Allure test report is available at: [Test Report](https://dev-bhadani.github.io/e2e-tests/)

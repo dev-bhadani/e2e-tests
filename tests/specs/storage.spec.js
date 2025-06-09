@@ -3,9 +3,11 @@ import config from "../config.json";
 import {login, logout} from "../helpers/loginHelper";
 import {getLocalStorageToken} from "../helpers/storageHelper";
 
+test.use({storageState: 'tests/loginAuth.json'});
+
 test.describe("LocalStorage Functionality", () => {
     test.beforeEach(async ({page}) => {
-        await page.goto(`${config.app_url}/login`);
+        await page.goto(`${config.app_url}`);
         await page.evaluate(() => localStorage.clear());
     });
 
